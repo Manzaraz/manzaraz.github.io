@@ -1,8 +1,35 @@
 import { useForm } from "../../hooks/useForm";
 
-const initialForm = {};
+const initialForm = {
+  name: "",
+  email: "",
+  subject: "",
+  comments: "",
+};
 
-const validationsForm = (form) => {};
+const validationsForm = (form) => {
+  let errors = {};
+
+  if (!form.name.trim()) {
+    errors.name = "Field 'Name' is required!.";
+  }
+  if (!form.email.trim()) {
+    errors.email = "Field 'Email' is required!.";
+  }
+  if (!form.subject.trim()) {
+    errors.subject = "Field 'Subject' is required!.";
+  }
+  if (!form.comments.trim()) {
+    errors.comments = "Field 'Message' is required!.";
+  }
+
+  return errors;
+};
+
+let styles = {
+  fontWeight: "bold",
+  color: "#dc3545",
+};
 
 const ContactForm = () => {
   const {
@@ -27,6 +54,7 @@ const ContactForm = () => {
           value={form.name}
           required
         />
+        {errors.name && <p style={styles}>{errors.name}</p>}
         <input
           type="email"
           name="email"
@@ -36,6 +64,7 @@ const ContactForm = () => {
           value={form.email}
           required
         />
+        {errors.email && <p style={styles}>{errors.email}</p>}
         <input
           type="text"
           name="subject"
@@ -45,6 +74,7 @@ const ContactForm = () => {
           value={form.subject}
           required
         />
+        {errors.subject && <p style={styles}>{errors.subject}</p>}
         <textarea
           name="comments"
           rows="5"
@@ -54,6 +84,7 @@ const ContactForm = () => {
           value={form.comments}
           required
         ></textarea>
+        {errors.comments && <p style={styles}>{errors.comments}</p>}
         <input type="submit" value="Submit" />
       </form>
     </>
