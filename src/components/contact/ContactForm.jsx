@@ -1,4 +1,7 @@
 import { useForm } from "../../hooks/useForm";
+import Loader from "../loader/Loader";
+
+import Message from "../message/Message";
 
 const initialForm = {
   name: "",
@@ -96,6 +99,10 @@ const ContactForm = () => {
         {errors.comments && <p style={styles}>{errors.comments}</p>}
         <input type="submit" value="Submit" />
       </form>
+      {loading && <Loader />}
+      {response && (
+        <Message msg="The message has been sent" bgColor="#198754" />
+      )}
     </>
   );
 };
