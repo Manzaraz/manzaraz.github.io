@@ -3,30 +3,22 @@ import avatar from "../../img/me.png";
 
 const Intro = () => {
   return (
-    <div className="i">
+    <section className="i">
       <div className="i-left">
         <div className="i-left-wrapper">
-          <h2 className="i-intro">¡Hola! Mi nombre es </h2>
-          <h1 className="i-name">Christian Manzaraz</h1>
+          <h2 className="i-intro">👋🏼 Hello! Good to see you! I'm</h2>
+          <h3 className="i-name">Christian Manzaraz</h3>
           <div className="i-title">
             <div className="i-title-wrapper">
-              <div className="i-title-item">Desarrollador Web</div>
-              <div className="i-title-item">Diseñador UI/UX</div>
-              <div className="i-title-item">Entusiasta de la Tecnología</div>
+              <div className="i-title-item">Full-Stack Web Developer</div>
+              <div className="i-title-item">Frontend</div>
+              <div className="i-title-item">Backend</div>
+              <div className="i-title-item"></div>
             </div>
           </div>
           <p className="i-desc">
-            Soy un un Desarrollador Web Full-Stack con experiencia en la
-            construccion de sitios y aplicaciones web. Me especializo en
-            JavaScript y tengo experiencia trabajando con React en la parte del
-            Frontend.{" "}
-          </p>
-          <p hidden>
-            {" "}
-            Si hay algo que me encanta de esta profesión, es la habilidad
-            continua de aprender; uno siempre debe mejorar las skills para así
-            poder aportar mis experiencias al equipo en el{" "}
-            <em>desarrollo ágil</em>.
+            A Full Stack web developer, with a preference for Frontend, who
+            loves to implement designs that inspire people.
           </p>
         </div>
         <svg
@@ -90,7 +82,7 @@ const Intro = () => {
         <div className="i-bg"></div>
         <img src={avatar} alt="Christian Manzaraz" className="i-img" />
       </div>
-    </div>
+    </section>
   );
 };
 
