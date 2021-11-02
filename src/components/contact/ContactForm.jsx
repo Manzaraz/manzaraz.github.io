@@ -9,18 +9,27 @@ const initialForm = {
 
 const validationsForm = (form) => {
   let errors = {};
+  let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚÜúü\s]+$/;
+  let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
+  let regexComents = /^.{1,255}$/;
 
   if (!form.name.trim()) {
-    errors.name = "Field 'Name' is required!.";
+    errors.name = 'Field "Name" is required!.';
+  } else if (!regexName.test(form.name.trim())) {
+    errors.name = 'the "name" field only accepts letters and blanks';
   }
   if (!form.email.trim()) {
-    errors.email = "Field 'Email' is required!.";
+    errors.email = 'Field "Email" is required!.';
+  } else if (!regexEmail.test(form.email.trim())) {
+    errors.email = 'the "emal" field must be a valid email';
   }
   if (!form.subject.trim()) {
-    errors.subject = "Field 'Subject' is required!.";
+    errors.subject = 'Field "Subject" is required!.';
   }
   if (!form.comments.trim()) {
-    errors.comments = "Field 'Message' is required!.";
+    errors.comments = 'Field "Message" is required!.';
+  } else if (!regexComents.test(form.comments.trim())) {
+    errors.comments = "message field must contain between 1 and 255 characters";
   }
 
   return errors;
