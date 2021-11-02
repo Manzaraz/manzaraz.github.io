@@ -4,9 +4,9 @@ const Product = ({ img, link }) => {
   return (
     <div className="p">
       <div className="p-browser">
-        <div className="p-circle"></div>
-        <div className="p-circle"></div>
-        <div className="p-circle"></div>
+        <div className="p-circle" style={{ backgroundColor: "#FF5733" }}></div>
+        <div className="p-circle" style={{ backgroundColor: "#F1C40F" }}></div>
+        <div className="p-circle" style={{ backgroundColor: "#2ECC71" }}></div>
       </div>
       <a href={link} target="_blank" rel="noreferrer">
         <img src={img} alt="" srcset="" className="p-img" />
