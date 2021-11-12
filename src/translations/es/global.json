@@ -1,0 +1,10 @@
+{
+  "intro": {
+    "i-intro": "👋🏼  ¡Hola Mundo!... Soy",
+    "i-desc": "Un desarrollador JavaScript FullStack autodidacta, con orientación al Frontend, al que le encanta implementar diseños que inspiren a las personas."
+  },
+  "about": {
+    "a-title": "Sobre mí...",
+    "a-desc": "Me encanta el Desarrollo Web, el área principal de mi experiencia radica en el front-end y aunque también poseo experiencia dentro del back-end y sus tecnologías relacionadas, debo confesar que disfruto mucho de estar al pendiente de cada detalle en el proceso de creación de la UI, probando la reactividad, el diseño responsivo y analizando cómo se puede mejorar la experiencia de usuario.\n\nDesde que descubrí la programación web, me encontré en un mundo de aprendizaje continuo, en donde un artículo sobre nuevas tecnologías o UI/UX me llevan a otro o a un libro, una librería o  un framework nuevo, él cual posiblemente implementaré en el proyecto en el que yo esté trabajando.\n\nConsidero que la curiosidad de aprender por cuenta propia y la predisposición para aprender de otros, es un factor importante para la mejora continua en este camino del desarrollador aplicaciones web; Y quiero estar a la altura de los desafíos que vendrán."
+  }
+}

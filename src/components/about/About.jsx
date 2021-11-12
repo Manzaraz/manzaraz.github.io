@@ -1,34 +1,34 @@
-import "./About.css";
+import { useTranslation } from "react-i18next";
+
 import Award from "../../img/pngwing.png";
+import Card from "./Card";
+import "./About.scss";
 
 const About = () => {
+  const [t, i18n] = useTranslation("global");
   return (
     <section className="a">
       <div className="a-left">
-        <div className="a-card bg"> </div>
         <div className="a-card">
-          <img
-            src="https://www.freelancermap.com/profileimages/anonymous-108521-xxl.jpg"
-            alt=""
-            className="a-img"
-          />
+          <Card />
         </div>
       </div>
 
       <div className="a-right">
-        <h1 className="a-title">Sobre Mí</h1>
-        <p className="a-sub" style={{ whiteSpace: "pre-line" }}>
+        <h3 className="a-title">{t("about.a-title")}</h3>
+        {/* <p className="a-sub" style={{ whiteSpace: "pre-line" }}>
           Soy un apasionado por el desarrollo web y las tecnologías
-          relacionadas. El área principal de mi experiencia radica en el
-          desarrollo front-end (React), aunque también poseo experiencia como
-          back-end.
+          relacionadas.
         </p>
-        <p className="a-desc">
-          Me encanta la tecnología, escuchar música, leer libros sobre el
-          desarrollo personal o cómo funciona la mente en la vida diaria, al
-          mismo tiempo que investigo todo tipo de herramientas, para entender y
-          sumar nuevas habilidades que se relacionan con mi carrera profesional.
-        </p>
+        <p className="a-sub" style={{ whiteSpace: "pre-line" }}>
+          El área principal de mi experiencia radica en el desarrollo
+          front-end(React) y aunque también poseo experiencia como back-end y
+          sus tecnologías relacionadas (NodeJS, MongoDB, PostgreSQL, ExpressJS y
+          SequelizeORM ), debo confesar.
+        </p> */}
+        <blockquote style={{ whiteSpace: "pre-wrap" }}>
+          {t("about.a-desc")}
+        </blockquote>
         <figure className="a-award">
           <img src={Award} alt="" srcset="" className="a-award-img" />
           <figcaption className="a-award-texts">

@@ -1,7 +1,8 @@
 import { useForm } from "../../hooks/useForm";
 import Loader from "../loader/Loader";
-
 import Message from "../message/Message";
+import { useContext } from "react";
+import { ThemeContext } from "../../helpers/context";
 
 const initialForm = {
   name: "",
@@ -39,11 +40,17 @@ const validationsForm = (form) => {
 };
 
 let styles = {
-  fontWeight: "bold",
+  width: "70%",
+  fontWeight: "300",
+  fontSize: ".8em",
   color: "#dc3545",
+  lineHeight: "1em",
 };
 
 const ContactForm = () => {
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
+
   const {
     form,
     errors,
@@ -58,6 +65,7 @@ const ContactForm = () => {
     <>
       <form onSubmit={handleSubmit}>
         <input
+          autocomplete="off"
           type="text"
           name="name"
           placeholder="Your name..."
@@ -65,9 +73,14 @@ const ContactForm = () => {
           onChange={handleChange}
           value={form.name}
           required
+          style={{
+            backgroundColor: darkMode ? "#27252750" : "#f5ede350",
+            color: darkMode && "#F5EDE3",
+          }}
         />
         {errors.name && <p style={styles}>{errors.name}</p>}
         <input
+          autoComplete="off"
           type="email"
           name="email"
           placeholder="Email..."
@@ -75,9 +88,14 @@ const ContactForm = () => {
           onChange={handleChange}
           value={form.email}
           required
+          style={{
+            backgroundColor: darkMode ? "#27252750" : "#f5ede350",
+            color: darkMode && "#F5EDE3",
+          }}
         />
         {errors.email && <p style={styles}>{errors.email}</p>}
         <input
+          autoComplete="off"
           type="text"
           name="subject"
           placeholder="Subject..."
@@ -85,6 +103,10 @@ const ContactForm = () => {
           onChange={handleChange}
           value={form.subject}
           required
+          style={{
+            backgroundColor: darkMode ? "#27252750" : "#f5ede350",
+            color: darkMode && "#F5EDE3",
+          }}
         />
         {errors.subject && <p style={styles}>{errors.subject}</p>}
         <textarea
@@ -95,6 +117,10 @@ const ContactForm = () => {
           onChange={handleChange}
           value={form.comments}
           required
+          style={{
+            backgroundColor: darkMode ? "#27252750" : "#f5ede350",
+            color: darkMode && "#F5EDE3",
+          }}
         ></textarea>
         {errors.comments && <p style={styles}>{errors.comments}</p>}
         <input type="submit" value="Submit" />

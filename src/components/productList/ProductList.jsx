@@ -1,10 +1,11 @@
 import Product from "../product/Product";
-import "./ProductList.css";
+import "./ProductList.scss";
 import { products } from "../../data";
 
 const ProductList = () => {
   return (
     <div className="pl">
+      <div className="pl-bg"></div>
       <div className="pl-texts">
         <h3 className="pl-title">Create & Inspire, It's Manzi</h3>
         <p className="pl-desc">

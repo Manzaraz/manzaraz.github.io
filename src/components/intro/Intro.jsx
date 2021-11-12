@@ -1,32 +1,67 @@
-import "./Intro.css";
-import avatar from "../../img/me.png";
+import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
+import { gsap } from "gsap";
+
+import "./Intro.scss";
+import avatar from "../../img/me1.png";
 
 const Intro = () => {
+  // eslint-disable-next-line
+  const [t, i18n] = useTranslation("global");
+
+  const timeline = gsap.timeline({ defaults: { opacity: 0 } });
+
+  useEffect(() => {
+    const iGreetings = document.querySelectorAll(".i-intro"),
+      iName = document.querySelector(".i-name"),
+      iTitle = document.querySelector(".i-title"),
+      iDesc = document.querySelector(".i-desc"),
+      iScroll = document.querySelector(".i-scroll"),
+      iBg = document.querySelector(".i-bg"),
+      iImg = document.querySelector(".i-img");
+
+    timeline
+      .from(iGreetings, {
+        opacity: 0,
+        y: -200,
+        duration: 1.5,
+        stagger: 0.3,
+      })
+      .from(iName, { duration: 3 })
+      .from(iTitle, { x: -50, duration: 1 }, "-=2")
+      .from(iDesc, { duration: 2 })
+      .from(iBg, { x: 200, duration: 2 }, "-= 4")
+      .from(iImg, { duration: 2 }, "-=5")
+      .from(iScroll, { duration: 2 });
+  }, []);
+
   return (
     <section className="i">
       <div className="i-left">
         <div className="i-left-wrapper">
-          <h2 className="i-intro">👋🏼 Hello! Good to see you! I'm</h2>
-          <h3 className="i-name">Christian Manzaraz</h3>
-          <div className="i-title">
-            <div className="i-title-wrapper">
-              <div className="i-title-item">Full-Stack Web Developer</div>
-              <div className="i-title-item">Frontend</div>
-              <div className="i-title-item">Backend</div>
-              <div className="i-title-item"></div>
+          <h1 className="i-intro">
+            {t("intro.i-intro")}
+            <br />
+            <div className="i-name">Christian Manzaraz</div>
+            <br />
+            <div className="i-title">
+              <div className="i-title-wrapper">
+                <div className="i-title-item">
+                  JavaScript Full-Stack Developer
+                </div>
+                <div className="i-title-item">Frontend</div>
+                <div className="i-title-item">Backend</div>
+              </div>
             </div>
-          </div>
-          <p className="i-desc">
-            A Full Stack web developer, with a preference for Frontend, who
-            loves to implement designs that inspire people.
-          </p>
+          </h1>
+          <h2 className="i-desc">{t("intro.i-desc")}</h2>
         </div>
         <svg
           width="75"
           height="75"
           viewBox="0 0 75 75"
           fill="none"
-          stroke="black"
+          stroke="rgb(255,102,0)"
           className="i-scroll"
           xmlns="http://www.w3.org/2000/svg"
         >
