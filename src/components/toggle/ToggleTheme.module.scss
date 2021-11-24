@@ -1,0 +1,52 @@
+@import "./../../styles/variables.scss";
+
+.tt {
+  width: 50px;
+  height: 25px;
+  border-radius: 20px;
+  border: 1px solid #bdbfba;
+  background-color: #575855;
+  position: sticky;
+
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: inset 0px -2px 3px 1px rgba($dark, 0.5);
+  &__icon {
+    width: 15px;
+    height: 15px;
+    opacity: 1;
+  }
+  &__button {
+    box-shadow: 0px -2px 3px 1px rgba($dark, 0.5);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid $p-dark;
+    background-image: linear-gradient(
+      to top,
+      $s-light 0%,
+      $secondary 51%,
+      $s-dark 100%
+    );
+    transition: 0.5s;
+    background-size: 100% auto;
+    color: #111;
+    display: block;
+    position: absolute;
+    cursor: pointer;
+
+    &:hover {
+      background-image: linear-gradient(
+        to bottom,
+        $s-light 0%,
+        $secondary 51%,
+        $s-dark 100%
+      );
+      box-shadow: 0px -2px 3px 1px rgba($p-dark, 0.45);
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}

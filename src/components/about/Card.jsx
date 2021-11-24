@@ -1,5 +1,5 @@
 import DeviceDetect from "../../helpers/deviceDetect";
-import "./Card.scss";
+import classes from "./Card.module.scss";
 import coddingImg0 from "../../img/programming1.jpg";
 const coddingVideo = "https://manzaraz.github.io/DOM/assets/%20Manzi.mp4";
 

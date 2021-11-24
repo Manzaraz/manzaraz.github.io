@@ -1,17 +1,15 @@
 import { useTranslation } from "react-i18next";
-import "./TogleLng.scss";
-// import { ThemeContext } from "../../helpers/context";
+
+import classes from "./ToggleLng.module.scss";
 
 const ToggleLng = () => {
-  //   const theme = useContext(ThemeContext);
-
   // eslint-disable-next-line
   const [t, i18n] = useTranslation("global");
 
   return (
     <div className="tl">
       <button
-        className="tl-btn tl-btn-es"
+        className={classes.tl__btnEs}
         onClick={() => {
           i18n.changeLanguage("es");
         }}
@@ -19,7 +17,8 @@ const ToggleLng = () => {
         es
       </button>
       <button
-        className="tl-btn tl-btn-en"
+        className={classes.tl__btnEn}
+        // "tl-btn tl-btn-en"
         onClick={() => {
           i18n.changeLanguage("en");
         }}

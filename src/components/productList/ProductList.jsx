@@ -1,6 +1,6 @@
 import Product from "../product/Product";
 import "./ProductList.scss";
-import { products } from "../../data";
+import { products } from "../../helpers/data";
 
 const ProductList = () => {
   return (

@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import { gsap } from "gsap";
 
-import "./Intro.scss";
+import classes from "./Intro.module.scss";
 import avatar from "../../img/me1.png";
 
 const Intro = () => {
@@ -31,38 +31,42 @@ const Intro = () => {
       .from(iTitle, { x: -50, duration: 1 }, "-=2")
       .from(iDesc, { duration: 2 })
       .from(iBg, { x: 200, duration: 2 }, "-= 4")
-      .from(iImg, { duration: 2 }, "-=5")
-      .from(iScroll, { duration: 2 });
+      .from(iImg, { duration: 1 }, "-=5")
+      .from(
+        iScroll,
+        { duration: 1, rotation: 360, y: 100, stagger: 0.5 },
+        "=-3"
+      );
   }, []);
 
   return (
-    <section className="i">
-      <div className="i-left">
-        <div className="i-left-wrapper">
-          <h1 className="i-intro">
+    <section className={classes.i}>
+      <div className={classes.i__left}>
+        <div className={classes.i__left__wrapper}>
+          <h1 className={`${classes.i__intro} i-intro`}>
             {t("intro.i-intro")}
-            <br />
-            <div className="i-name">Christian Manzaraz</div>
-            <br />
-            <div className="i-title">
-              <div className="i-title-wrapper">
-                <div className="i-title-item">
+            <div className={`${classes.i__name} i-name`}>
+              Christian Manzaraz
+            </div>
+            <div className={`${classes.i__title} i-title`}>
+              <div className={classes.i__title__wrapper}>
+                <div className={classes.i__title__item}>
                   JavaScript Full-Stack Developer
                 </div>
-                <div className="i-title-item">Frontend</div>
-                <div className="i-title-item">Backend</div>
+                <div className={classes.i__title__item}>Frontend</div>
+                <div className={classes.i__title__item}>Backend</div>
               </div>
             </div>
           </h1>
-          <h2 className="i-desc">{t("intro.i-desc")}</h2>
+          <h2 className={`${classes.i__desc} i-desc`}>{t("intro.i-desc")}</h2>
         </div>
         <svg
+          className={`${classes.i__scroll} i-scroll`}
           width="75"
           height="75"
           viewBox="0 0 75 75"
           fill="none"
-          stroke="rgb(255,102,0)"
-          className="i-scroll"
+          stroke="rgb(201, 180, 22)"
           xmlns="http://www.w3.org/2000/svg"
         >
           <g id="scroll">
@@ -113,9 +117,13 @@ const Intro = () => {
           </g>
         </svg>
       </div>
-      <div className="i-right">
-        <div className="i-bg"></div>
-        <img src={avatar} alt="Christian Manzaraz" className="i-img" />
+      <div className={classes.i__right}>
+        <div className={`${classes.i__bg} i-bg`}></div>
+        <img
+          src={avatar}
+          alt="Christian Manzaraz"
+          className={`${classes.i__img} i-img`}
+        />
       </div>
     </section>
   );

@@ -1,16 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import "./styles/index.scss";
 import { ThemeProvider } from "./helpers/context";
 import { I18nextProvider } from "react-i18next";
 import i18next from "i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
 
 import global_es from "./translations/es/global.json";
 import global_en from "./translations/en/global.json";
 
-i18next.init({
-  interpolation: { escapeValue: false },
-  lng: "es",
+i18next.use(LanguageDetector).init({
+  interpolation: {
+    fallbackLng: ["es", "en"], //
+    escapeValue: false,
+  },
+  // lng: "es",
   resources: {
     es: {
       global: global_es,

@@ -1,10 +1,11 @@
-import "./Toggle.scss";
+import { useContext } from "react";
+
+import classes from "./ToggleTheme.module.scss";
 import Sun from "../../img/sun.png";
 import Moon from "../../img/moon.png";
-import { useContext } from "react";
 import { ThemeContext } from "../../helpers/context";
 
-const Toggle = () => {
+const ToggleTheme = () => {
   const theme = useContext(ThemeContext);
 
   const handleClick = () => {
@@ -12,11 +13,12 @@ const Toggle = () => {
   };
 
   return (
-    <div className="t">
-      <img src={Sun} alt="" className="t-icon" />
-      <img src={Moon} alt="" className="t-icon" />
+    <div className={classes.tt}>
+      <img src={Sun} alt="" className={classes.tt__icon} />
+      <img src={Moon} alt="" className={classes.tt__icon} />
+
       <div
-        className="t-button"
+        className={classes.tt__button}
         onClick={handleClick}
         style={{
           left: theme.state.darkMode ? "0" : "25px",
@@ -27,4 +29,4 @@ const Toggle = () => {
   );
 };
 
-export default Toggle;
+export default ToggleTheme;

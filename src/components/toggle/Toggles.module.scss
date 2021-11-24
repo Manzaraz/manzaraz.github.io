@@ -1,0 +1,13 @@
+@import "./../../styles/variables.scss";
+.t {
+  width: 115px;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-around;
+
+  //   @include breakpoint(md) {
+  //     width: 100vh;
+  //     justify-content: space-between;
+  //   }
+}

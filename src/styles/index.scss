@@ -1,0 +1,26 @@
+@import "./variables.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li,
+a,
+button {
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  width: 100%;
+  font-family: $Poppins;
+  color: $dark;
+}
+
+#root {
+  height: 100%;
+}
