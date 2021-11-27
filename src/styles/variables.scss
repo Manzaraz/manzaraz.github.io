@@ -26,6 +26,46 @@ $borderRadius: 12px;
 // Header height
 $headerHeight: 3rem;
 
+// Button
+@mixin btn {
+  cursor: pointer;
+  border: 1px solid $primary;
+  font-size: 15px;
+  font-weight: 600;
+  color: $p-dark;
+  background-image: linear-gradient(
+    to bottom,
+    $s-light 0%,
+    $secondary 51%,
+    $s-dark 100%
+  );
+  text-align: center;
+  transition: 0.5s;
+  background-size: 100% auto;
+  box-shadow: $boxShadow;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-image: linear-gradient(
+      to top,
+      $s-light 0%,
+      $secondary 51%,
+      $s-dark 100%
+    );
+    box-shadow: $boxShadowHover;
+    color: $dark;
+    text-decoration: none;
+  }
+  &:active {
+    background: darken($secondary, 10%);
+    box-shadow: none;
+  }
+}
+
+// Shadows
+$boxShadow: 0px 2px 3px 1px rgba($dark, 0.5);
+$boxShadowHover: 0px 2px 3px 1px rgba($p-dark, 0.5);
+
 @mixin breakpoint($point) {
   @if $point == md {
     //   48em = 768px

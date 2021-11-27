@@ -5,18 +5,22 @@ const coddingVideo = "https://manzaraz.github.io/DOM/assets/%20Manzi.mp4";
 
 const Card = () => {
   return (
-    <div className="card">
-      <div className="card-top">
-        <div className="card-browser"></div>
-        <figure className="card-img-cnt">
+    <div className={classes.card}>
+      <div className={classes.card__top}>
+        <div className={classes.card__browser}></div>
+        <figure className={classes.card__imgCnt}>
           {DeviceDetect() === "Mobile" ? (
-            <img src={coddingImg0} alt="Me programming" className="card-img" />
+            <img
+              src={coddingImg0}
+              alt="Me programming"
+              className={classes.card__img}
+            />
           ) : (
             <video
               src={coddingVideo}
               alt="Christian Programming"
               type="video/mp4"
-              className="card-img"
+              className={classes.card__img}
               autoPlay
               loop
               muted
@@ -24,11 +28,11 @@ const Card = () => {
           )}
         </figure>
       </div>
-      <div></div>
-      <div className="card-body">
-        <div className="card-open"></div>
+      <div className={classes.card__body}>
+        <div className={classes.card__open}></div>
       </div>
-      <div className="card-down"></div>
+      <div className={classes.card__down}></div>
+      <div className={classes.card__caption}>ManziPro</div>
     </div>
   );
 };

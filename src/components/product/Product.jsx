@@ -9,7 +9,7 @@ const Product = ({ img, link }) => {
         <div className="p-circle" style={{ backgroundColor: "#2ECC71" }}></div>
       </div>
       <a href={link} target="_blank" rel="noreferrer">
-        <img src={img} alt="" srcset="" className="p-img" />
+        <img src={img} alt="example page" className="p-img" />
       </a>
     </div>
   );

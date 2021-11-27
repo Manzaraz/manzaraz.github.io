@@ -2,10 +2,10 @@ import ToggleLng from "./ToggleLng";
 import classes from "./Toggles.module.scss";
 import ToggleTheme from "./ToggleTheme";
 
-const Toggles = ({ handleMenu }) => {
+const Toggles = () => {
   return (
     <div className={classes.t}>
-      <ToggleLng onClick={handleMenu} className={classes.t__toggle} />
+      <ToggleLng className={classes.t__toggle} />
       <ToggleTheme className={classes.t__toggle} />
     </div>
   );

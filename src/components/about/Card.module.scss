@@ -5,27 +5,39 @@
   flex-direction: column;
   align-items: center;
 
-  .card-top {
+  &__top {
     width: 280px;
-    height: auto;
+    height: 175px;
     border: 10px solid #101010;
     border-radius: 10px 10px 0 0;
     overflow: hidden;
     align-items: center;
-    .card-browser {
-      height: 5px;
-      top: -10px;
-      background-color: #101010;
-      position: sticky;
-      z-index: 2;
-    }
-    .card-img {
-      width: 100%;
-      height: auto;
-      background-color: #101010;
-    }
   }
-  .card-body {
+  &__browser {
+    height: 5px;
+    top: -10px;
+    background-color: #101010;
+    position: sticky;
+    z-index: 2;
+  }
+  &__imgCnt {
+    background: #000;
+  }
+  &__caption {
+    position: relative;
+    font-size: 6.5px;
+    font-weight: 200;
+    top: -18px;
+    text-align: center;
+    color: $light;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    background-color: #101010;
+  }
+  &__body {
     width: 350px;
     height: 4px;
     margin: 0;
@@ -33,26 +45,28 @@
     flex-direction: column;
     align-items: center;
     background-color: #b0b5b8;
-    background-image: linear-gradient(to center, #b0b5b8, #d7d2cc);
+    background-image: linear-gradient(to right, #999, #b0b5b8, #d9d9d9);
+
     border-radius: 1px 1px 0 0;
-    .card-open {
-      width: 50px;
-      height: 7px;
-      border-radius: 0 0 10px 10px;
-      background-color: #b7b7b7;
-      box-shadow: 5px 5px 7px 0.5px rgba(0, 0, 0, 0.5) inset;
-    }
   }
-  .card-down {
+  &__open {
+    width: 50px;
+    height: 7px;
+    border-radius: 0 0 10px 10px;
+    background-color: #b7b7b7;
+    // box-shadow: 5px 5px 7px 0.5px rgba(0, 0, 0, 0.5) inset;
+    box-shadow: inset $boxShadow;
+  }
+  &__down {
     width: 350px;
     height: 5px;
     margin: 0;
     background-color: #6f7174;
-    background-image: linear-gradient(to up, #d7d2cc 10%, #b0b5b8 80%);
+    background-image: linear-gradient(to bottom, #6f7174, #2b2b2b);
     border-radius: 0 0 10px 10px;
     overflow: hidden;
     border-radius: 0px 0px 75px 75px / 0px 0px 25px 25px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.85);
+    box-shadow: $boxShadow;
   }
 }
 

@@ -3,19 +3,20 @@
 .header {
   background: linear-gradient($primary 75%, rgba($p-light1, 0.9));
   width: 100%;
-  height: $headerHeight;
-  padding: 0 1.5rem;
-  position: -webkit-sticky;
+  // height: $headerHeight;
+  // padding: 0 1.5rem;
+  // position: -webkit-sticky;
+  z-index: 999;
   position: sticky;
-  top: 101vh;
+  top: 0;
   @include breakpoint(md) {
-    padding: 0 3rem;
+    padding: 0 10px;
   }
   transition: all 0.3s ease-in-out;
   &__content {
     overflow: hidden;
     color: $light;
-    margin: 0 auto;
+    // margin: 0 auto;
     max-width: 1920px;
     display: flex;
     justify-content: space-between;
@@ -66,7 +67,7 @@
           flex-direction: row;
           align-items: center;
           margin-bottom: 0;
-          margin-right: calc(0.5rem + #{$spacing-md});
+          margin-right: calc(3px + #{$spacing-md});
         }
 
         li {
@@ -110,6 +111,11 @@
       @include breakpoint(md) {
         display: none;
       }
+    }
+    &__close {
+      position: relative;
+      bottom: 10px;
+      right: 10px;
     }
   }
 }

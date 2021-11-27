@@ -3,75 +3,99 @@
 .a {
   height: 100vh;
   display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
-  .a-left {
-    flex: 1;
+
+  &__container {
     display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
     align-items: center;
-    justify-content: center;
+    @include breakpoint(md) {
+      flex-direction: row;
+    }
+  }
+
+  &__left {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
     position: relative;
     height: 100%;
-
-    .a-card {
-      width: 100%;
-      height: auto;
-      display: inline-block;
-    }
-  }
-  .a-right {
-    flex: 1;
-    margin: 20px;
-    text-align: justify;
-
-    .a-title {
-      font-weight: 600;
+    @include breakpoint(md) {
+      background-color: $primary;
+      border-radius: $borderRadius;
+      box-shadow: $boxShadow;
       margin: 20px;
     }
-    .a-sub {
-      margin: 20px 0;
-    }
-    .a-desc {
-      font-weight: 300;
-    }
-    .a-award {
-      margin-top: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
 
-      .a-award-img {
-        width: 120px;
-        height: 120px;
-        border-radius: 20px;
+    &__where {
+      display: none;
+      flex-direction: column;
+      justify-content: space-evenly;
+      font-size: 1.5rem;
+      @include breakpoint(md) {
+        display: flex;
       }
-      .a-award-texts {
-        width: 70%;
+      h4 {
+        margin: $spacing-md;
+      }
+    }
 
-        .a-award-title {
-          font-weight: bold;
-          color: #6699ff;
-          margin-bottom: 10px;
-        }
+    &__card {
+      position: static;
+    }
+    &__btnCv {
+      @include btn;
+      padding: 10px;
+      border-radius: $borderRadius;
+      width: 80%;
+    }
+  }
+
+  &__right {
+    flex: 3;
+    justify-content: space-around;
+    font-size: 16px;
+    margin: 10px;
+
+    &__title {
+      font-weight: 600;
+    }
+  }
+  @mixin p {
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  &__know {
+    display: none;
+    margin-top: 25px;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+
+    @include breakpoint(md) {
+      display: flex;
+    }
+
+    &__texts {
+      width: 72.5%;
+      height: 100%;
+      margin: 0 10px;
+
+      &_desc {
+        @include p;
       }
     }
   }
-}
-
-@media screen and (max-width: 480px) {
-  .a {
-    font-display: column;
-    text-align: center;
-    margin-top: 50px;
-
-    .a-left {
-      width: 100%;
-    }
-    .a-card.bg,
-    .a-award {
-      display: none;
-    }
-    .a-right {
-      padding: 20px;
-    }
+  &__title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: $primary;
   }
 }

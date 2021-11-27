@@ -1,0 +1,50 @@
+@import "./../../styles/variables.scss";
+
+.tech {
+  width: 122.5px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  background: $primary;
+  box-shadow: $boxShadow;
+  border-radius: $borderRadius;
+
+  &__wrapper {
+    height: 100%;
+    animation: move 25s ease-in-out infinite alternate;
+  }
+  @keyframes move {
+    0% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(-910px);
+    }
+  }
+  &__fig {
+    position: static;
+    height: 50px;
+    width: 50px;
+    flex: 1;
+    padding: 5px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__img {
+      height: 42px;
+      width: auto;
+    }
+    &__fc {
+      font-size: 14px;
+      font-weight: 400;
+      text-align: center;
+      color: $light;
+    }
+  }
+}

@@ -14,44 +14,17 @@
   align-items: center;
   justify-content: space-around;
 
-  @mixin button {
-    cursor: pointer;
+  &__btnEs {
+    @include btn;
+    border-radius: 25px 0 0 25px;
     width: 25px;
     height: 25px;
-    border: 1px solid $primary;
-    font-size: 15px;
-    font-weight: 600;
-    color: $p-dark;
-    background-image: linear-gradient(
-      to top,
-      $s-light 0%,
-      $secondary 51%,
-      $s-dark 100%
-    );
-    text-align: center;
-    transition: 0.5s;
-    background-size: 100% auto;
-    box-shadow: 0px -2px 3px 1px rgba($dark, 0.5);
-
-    &:hover {
-      background-image: linear-gradient(
-        to bottom,
-        $s-light 0%,
-        $secondary 51%,
-        $s-dark 100%
-      );
-      box-shadow: 0px -2px 3px 1px rgba($p-dark, 0.5);
-      color: $dark;
-      text-decoration: none;
-    }
-  }
-  &__btnEs {
-    @include button;
-    border-radius: 25px 0 0 25px;
   }
 
   &__btnEn {
-    @include button;
+    @include btn;
     border-radius: 0 25px 25px 0;
+    width: 25px;
+    height: 25px;
   }
 }

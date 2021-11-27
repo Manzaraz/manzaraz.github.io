@@ -65,13 +65,16 @@ const Header = () => {
               </a>
             </li>
           </ul>
-          <Toggles handleMenu={handleMenu} />
+          <Toggles />
         </nav>
         <div className={classes.header__content__menu}>
           {!menuOpen ? (
             <RiMenu5Fill onClick={handleMenu} />
           ) : (
-            <RiCloseFill onClick={handleMenu} />
+            <RiCloseFill
+              onClick={handleMenu}
+              className={classes.header__close}
+            />
           )}
         </div>
       </div>

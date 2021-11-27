@@ -21,10 +21,11 @@ const App = () => {
     >
       <Intro />
       <Header />
-      <About id="about" />
-      {/* 
+      <About />
       <ProductList />
-      <Contact /> */}
+      {/* 
+      <Contact /> 
+      */}
     </div>
   );
 };
