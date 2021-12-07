@@ -9,9 +9,38 @@
     "i-desc": "Un desarrollador JavaScript FullStack autodidacta, con orientación al Frontend, al que le encanta implementar diseños que inspiren a las personas."
   },
   "about": {
+    "a-where": "Y soy de ... ",
+    "a-from": "...Y estoy dispuesto a viajar a donde el código me lleve",
+    "a-btn": "Descargar CV",
     "a-title": "Sobre mí...",
     "a-desc": "Me apasionan las tecnologías. En el desarrollo web, el área principal de mi experiencia radica en el Frontend y aunque también tengo experiencia en el Backend y sus tecnologías relacionadas. Debo confesar que disfruto mucho estando al tanto de cada detalle en el proceso de creación de la UI, probando el diseño responsivo y analizando cómo se puede mejorar la experiencia del usuario. \n Desde que descubrí la programación web, me he encontrado en un mundo de aprendizaje continuo, donde un artículo sobre UI/UX o nuevas tecnologías me lleva a otro texto, o a un nuevo libro, librería o framework, que posiblemente implementaré en el proyecto en el que estoy trabajando. \n Considero que la curiosidad por aprender por tu cuenta es una cualidad muy importante, tan importante como aprender de los demás e incluso cuando cometes errores en el camino.🧑🏽‍💻",
     "a-know-title": "¿Qué conozco?",
-    "a-know-desc": "Estas son algunas de las tecnologías con las que estoy familiarizado, aunque no son limitantes. Todos los días se puede aprender algo nuevo.💪🏼"
+    "a-know-desc": "Estas son algunas de las tecnologías con las que estoy familiarizado, aunque no son limitantes. Todos los días se puede aprender algo nuevo.💪🏼",
+    "a-more": "... [Para leer más, por favor cambie de dispositivo 🧑🏽‍💻]"
+  },
+  "product": {
+    "pl-title": "Portafolio",
+    "pl-desc": "Aquí puedes ver  algunos proyectos en los que he trabajado"
+  },
+  "contact": {
+    "c-title": "¿Quieres contactarme? \n¿Cotarme tu idea💡?",
+    "c-desc": "Siempre estoy abierto a nuevos proyectos.🧑🏽‍💻 \nTal vez ésta sea la excusa perfecta para ponernos en contacto. \nDale... Mandame un email 📨",
+    "c-send": "Envíame un correo electrónico.",
+    "c-name": "Tu nombre",
+    "c-email": "Correo electrónico",
+    "c-subject": "Asunto",
+    "c-message": "Tu mensaje...",
+    "c-submit": "Enviar",
+    "c-err-name1": "¡El campo 'Nombre' es requerido!",
+    "c-err-name2": "El campo 'Nombre' sólo acepta letras y espacios en blanco",
+    "c-err-email1": "¡El campo 'Correo Electrónico' es requerido!",
+    "c-err-email2": "El 'Correo Electrónico' debe ser una dirección válida",
+    "c-err-subject": "¡El campo 'Asunto' es requerido!",
+    "c-err-message1": "¡El campo 'Mensaje' es requerido!",
+    "c-err-message2": "El 'Mensaje' debe contener entre 1 y 280 caracteres",
+    "c-success": "¡El mensaje fue enviado con éxito!"
+  },
+  "pdf": {
+    "pdf-mobile": "Su dispositivo no puede mostrar  los archivos PDF, por favor haz click aquí para descargarlo"
   }
 }

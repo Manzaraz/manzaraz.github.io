@@ -1,0 +1,11 @@
+@import "./../styles/variables.scss";
+
+.app {
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  // -webkit-scroll-snap-type: mandatory;
+  overflow-y: scroll;
+  // scroll-behavior: smooth;
+  // -webkit-overflow-scrolling: touch;
+  transition: all 0.7s ease-in-out;
+}

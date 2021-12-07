@@ -1,11 +1,14 @@
 @import "./../../styles/variables.scss";
 
 .a {
-  height: 100vh;
+  height: $layoutHeight;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  @include breakpoint(md) {
+    // scroll-snap-align: center;
+  }
 
   &__container {
     display: flex;
@@ -19,26 +22,33 @@
 
   &__left {
     flex: 2;
+    min-width: 320px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     position: relative;
     height: 100%;
+    padding: 10px;
     @include breakpoint(md) {
-      background-color: $primary;
+      background: linear-gradient(to top, $p-dark, $primary, $p-light1);
       border-radius: $borderRadius;
       box-shadow: $boxShadow;
-      margin: 20px;
+      margin: 10px;
     }
 
     &__where {
+      flex: 1;
+      width: 280px;
+      margin: 10px;
       display: none;
       flex-direction: column;
       justify-content: space-evenly;
+      align-items: center;
       font-size: 1.5rem;
       @include breakpoint(md) {
         display: flex;
+        font-size: 1.2rem;
       }
       h4 {
         margin: $spacing-md;
@@ -46,7 +56,12 @@
     }
 
     &__card {
-      position: static;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+      // flex: 1;
+      // align-content: center;
     }
     &__btnCv {
       @include btn;
@@ -61,14 +76,18 @@
     justify-content: space-around;
     font-size: 16px;
     margin: 10px;
+    width: 92%;
 
     &__title {
       font-weight: 600;
     }
+    &__desc {
+      @include longText;
+    }
   }
-  @mixin p {
+  @mixin figcaption {
+    font-size: 1rem;
     font-weight: 200;
-    font-size: 16px;
     line-height: 1.2;
   }
 
@@ -76,26 +95,34 @@
     display: none;
     margin-top: 25px;
     align-items: center;
-    justify-content: space-between;
-    flex-direction: row-reverse;
+    justify-content: center;
 
     @include breakpoint(md) {
       display: flex;
     }
 
     &__texts {
+      min-width: inherit;
       width: 72.5%;
       height: 100%;
       margin: 0 10px;
 
-      &_desc {
-        @include p;
+      &__desc {
+        @include longText;
+
+        // @include breakpoint(md) {
+        //   // max-width: none;
+        // }
       }
     }
   }
   &__title {
-    font-size: 2rem;
     font-weight: 800;
     color: $primary;
+    font-size: 1.4rem;
+
+    @include breakpoint(md) {
+      font-size: 2rem;
+    }
   }
 }

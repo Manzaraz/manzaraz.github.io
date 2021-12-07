@@ -20,61 +20,61 @@ export const techs = [
   {
     id: 0,
     tech: "git",
-    icon: "./img/git.png",
+    icon: "./assets/git.png",
   },
   {
     id: 1,
     tech: "HTML",
-    icon: "./img/html.png",
+    icon: "./assets/html.png",
   },
   {
     id: 2,
     tech: "CSS",
-    icon: "./img/css.png",
+    icon: "./assets/css.png",
   },
   {
     id: 3,
     tech: "JavaScript",
-    icon: "./img/js.png",
+    icon: "./assets/js.png",
   },
   {
     id: 4,
     tech: "React",
-    icon: "./img/react.png",
+    icon: "./assets/react.png",
   },
   {
     id: 5,
     tech: "Sass",
-    icon: "./img/sass.png",
+    icon: "./assets/sass.png",
   },
   {
     id: 6,
     tech: "Bootstrap",
-    icon: "./img/bootstrap.png",
+    icon: "./assets/bootstrap.png",
   },
   {
     id: 7,
     tech: "Styled Components",
-    icon: "./img/styled.png",
+    icon: "./assets/styled.png",
   },
   {
     id: 8,
     tech: "Nodejs",
-    icon: "./img/node.png",
+    icon: "./assets/node.png",
   },
   {
     id: 9,
     tech: "Express",
-    icon: "./img/express.png",
+    icon: "./assets/express.png",
   },
   {
     id: 10,
     tech: "Postgre",
-    icon: "./img/postgre.png",
+    icon: "./assets/postgre.png",
   },
   {
     id: 11,
     tech: "Mongodb",
-    icon: "./img/mongodb.png",
+    icon: "./assets/mongodb.png",
   },
 ];

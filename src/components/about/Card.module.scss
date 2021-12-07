@@ -37,8 +37,8 @@
     height: auto;
     background-color: #101010;
   }
-  &__body {
-    width: 350px;
+  &__box {
+    width: 320px;
     height: 4px;
     margin: 0;
     display: flex;
@@ -51,21 +51,21 @@
   }
   &__open {
     width: 50px;
-    height: 7px;
+    height: 12px;
     border-radius: 0 0 10px 10px;
     background-color: #b7b7b7;
     // box-shadow: 5px 5px 7px 0.5px rgba(0, 0, 0, 0.5) inset;
     box-shadow: inset $boxShadow;
   }
   &__down {
-    width: 350px;
+    width: 320px;
     height: 5px;
     margin: 0;
     background-color: #6f7174;
     background-image: linear-gradient(to bottom, #6f7174, #2b2b2b);
     border-radius: 0 0 10px 10px;
     overflow: hidden;
-    border-radius: 0px 0px 75px 75px / 0px 0px 25px 25px;
+    border-radius: 0 0 80px 80px / 0 0 $borderRadius $borderRadius;
     box-shadow: $boxShadow;
   }
 }

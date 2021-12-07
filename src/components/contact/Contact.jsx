@@ -1,36 +1,40 @@
-import "./Contact.scss";
+import classes from "./Contact.module.scss";
 import guyProgramming from "../../img/Developers.png";
 import ContactForm from "./ContactForm";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+  const [t, i18n] = useTranslation("global");
+
   return (
-    <article className="c">
-      {/* <nav className="c-bg"></nav> */}
-      <section className="c-section">
-        <h3 className="c-title">
-          ¿Tienes una idea en mente para subirla en la web?
-        </h3>
-        <div className="c-wrapper">
-          <article className="c-left">
-            <h4 className="c-sub">Discutamos tu Proyecto.</h4>
-            <p className="c-desc">
-              <b>Pongámosnos en contacto. </b>
-              Puedo leer tu oferta laboral. También estoy siempre disponible
-              para trabajar Freelancing, si se me presenta el proyecto adecuado.
-            </p>
+    <section className={classes.c} id="contact">
+      <div className={classes.c__wrapper}>
+        <article className={classes.c__left}>
+          <h3 className={classes.c__title} style={{ whiteSpace: "pre-wrap" }}>
+            {t("contact.c-title")}
+          </h3>
+          <div className={classes.c__info}>
+            <blockquote
+              style={{ whiteSpace: "pre-wrap" }}
+              className={classes.c__info__desc}
+            >
+              {t("contact.c-desc")}
+            </blockquote>
             <img
               src={guyProgramming}
               alt="Guy Programming"
-              className="c-icon"
+              className={classes.c__info__img}
             />
-          </article>
-          <article className="c-right">
-            <h3 className="c-sub">Envíame un email.</h3>
+          </div>
+        </article>
+        <article className={classes.c__right}>
+          <h4 className={classes.c__right__sub}>{t("contact.c-send")}</h4>
+          <figure className={classes.c__right__cf}>
             <ContactForm />
-          </article>
-        </div>
-      </section>
-    </article>
+          </figure>
+        </article>
+      </div>
+    </section>
   );
 };
 

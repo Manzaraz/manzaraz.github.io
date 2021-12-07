@@ -21,16 +21,12 @@
   &__button {
     @include btn;
     // box-shadow: $boxShadow;
+
     width: 25px;
     height: 25px;
     border-radius: 50%;
     border: 1px solid $p-dark;
-
-    transition: 0.5s;
-    background-size: 100% auto;
-    color: #111;
     display: block;
     position: absolute;
-    cursor: pointer;
   }
 }

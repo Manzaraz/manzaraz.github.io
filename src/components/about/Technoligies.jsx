@@ -4,8 +4,8 @@ import classes from "./Technologies.module.scss";
 const Technoligies = () => {
   return (
     <div className={classes.tech}>
-      {techs.map((el) => (
-        <div className={classes.tech__wrapper}>
+      <div className={classes.tech__wrapper}>
+        {techs.map((el) => (
           <figure key={el.id} className={classes.tech__fig}>
             <img
               className={classes.tech__fig__img}
@@ -13,9 +13,10 @@ const Technoligies = () => {
               alt={el.tech}
             />
             <figcaption className={classes.tech__fig__fc}>{el.tech}</figcaption>
+            <br />
           </figure>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

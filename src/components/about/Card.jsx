@@ -28,11 +28,11 @@ const Card = () => {
           )}
         </figure>
       </div>
-      <div className={classes.card__body}>
+      <div className={classes.card__box}>
         <div className={classes.card__open}></div>
       </div>
       <div className={classes.card__down}></div>
-      <div className={classes.card__caption}>ManziPro</div>
+      <div className={classes.card__caption}>ManziBook Pro</div>
     </div>
   );
 };

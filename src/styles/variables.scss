@@ -9,12 +9,13 @@ $primary: rgb(0, 157, 174); // #009dae
 $p-dark: rgb(0, 110, 127); // #006e7f
 $p-light1: rgb(99, 206, 224); // #63cee0
 $p-light2: rgb(194, 255, 249); // #c2fff9
-$secondary: rgb(255, 230, 82);
-$s-dark: rgb(201, 180, 22);
-$s-light: rgb(255, 255, 133);
+$secondary: rgb(255, 230, 82); // #ffe652
+$s-dark: rgb(201, 180, 22); // #c9b416
+$s-light: rgb(255, 255, 133); // #ffff85
 
-$light: rgb(243, 242, 242);
-$dark: rgb(0, 0, 0);
+$light: rgb(243, 242, 242); // #f3f2f2
+$dark: rgb(0, 0, 0); // #000
+$gray: rgba(155, 159, 151, 0.5); // #979f9750
 
 // Spacing
 $spacing-md: 16px;
@@ -26,8 +27,41 @@ $borderRadius: 12px;
 // Header height
 $headerHeight: 3rem;
 
+//  Layout height
+$layoutHeight: calc(100vh - $headerHeight);
+
+// Title
+@mixin title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  @include breakpoint(md) {
+    font-size: calc(3vw + 14px);
+  }
+}
+
+// Subtitle
+@mixin sub {
+  font-size: 1.25rem;
+  font-weight: 400;
+
+  @include breakpoint(md) {
+    font-size: calc(3vw + 2px);
+  }
+}
+
+//  Long text
+@mixin longText {
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 200;
+  line-height: 1.75rem;
+  text-align: justify;
+}
+
 // Button
 @mixin btn {
+  height: 50px;
   cursor: pointer;
   border: 1px solid $primary;
   font-size: 15px;
@@ -44,6 +78,7 @@ $headerHeight: 3rem;
   background-size: 100% auto;
   box-shadow: $boxShadow;
   transition: all 0.3s ease-in-out;
+  border: 1px solid #bdbfba;
 
   &:hover {
     background-image: linear-gradient(
@@ -52,24 +87,34 @@ $headerHeight: 3rem;
       $secondary 51%,
       $s-dark 100%
     );
-    box-shadow: $boxShadowHover;
-    color: $dark;
+    color: $p-light1;
     text-decoration: none;
   }
   &:active {
-    background: darken($secondary, 10%);
     box-shadow: none;
   }
 }
 
 // Shadows
 $boxShadow: 0px 2px 3px 1px rgba($dark, 0.5);
-$boxShadowHover: 0px 2px 3px 1px rgba($p-dark, 0.5);
 
+@mixin textShadow {
+  text-shadow: 0px 1.2px 1.3px $light;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+}
+
+//  Breakpoints
 @mixin breakpoint($point) {
   @if $point == md {
     //   48em = 768px
     @media (min-width: 48em) {
+      @content;
+    }
+  }
+  @if $point == xl {
+    //   90em = 1440px
+    @media (min-width: 90em) {
       @content;
     }
   }

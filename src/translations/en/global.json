@@ -9,9 +9,38 @@
     "i-desc": "A self-taught JavaScript Full Stack Developer, with preference for front-end, who loves to implement designs that inspire people."
   },
   "about": {
+    "a-where": "I come from... ",
+    "a-from": "... And I'm ready to travel where the code takes me.",
+    "a-btn": "Download CV",
     "a-title": "About...",
     "a-desc": "I am passionate about the technologies. In Web Development, the main area of my expertise lies in front-end and although I also have experience in back-end and its related technologies. I must confess that I really enjoy being aware of every detail in the UI creation process, testing the responsive design and analyzing how the user experience can be improved. \n Since I discovered web programming, I have found myself in a world of continuous learning, where one article on UI/UX or new technologies leads me to another text, or to a new book, library or framework, which I will possibly implement in the project I am working on. \n I consider that the curiosity to learn on your own is a very important quality, so important like learning from others and even when you make errors along the way.💪🏼",
     "a-know-title": "What I know?",
-    "a-know-desc": "These are some of the technologies I am familiar with, although they are not limiting. Every day I can learn something new.🧑🏽‍💻"
+    "a-know-desc": "These are some of the technologies I am familiar with, although they are not limiting. Every day I can learn something new.🧑🏽‍💻",
+    "a-more": "... [To read more, please change your device 🧑🏽‍💻]"
+  },
+  "product": {
+    "pl-title": "Portfolio",
+    "pl-desc": "Here you can see some projects I have worked on"
+  },
+  "contact": {
+    "c-title": "Do you want to contact me?\nTell me about your idea💡",
+    "c-desc": "I'm always open to new projects🧑🏽‍💻 \nMaybe this is the perfect excuse to get in touch. \nCome on... Send me an email 📨",
+    "c-send": "Send me an email",
+    "c-name": "Your name",
+    "c-email": "email",
+    "c-subject": "subject",
+    "c-message": "Your message...",
+    "c-submit": "Send",
+    "c-err-name1": "Field 'Name' is required!",
+    "c-err-name2": "the 'Name' field only accepts letters and blanks",
+    "c-err-email1": "Field 'Email' is required!",
+    "c-err-email2": "the 'Email' field must be a valid email",
+    "c-err-subject": "Field 'Subject' is required!",
+    "c-err-message1": "Field 'Message' is required!",
+    "c-err-message2": "The 'Message' field must contain between 1 and 280 characters",
+    "c-success": "The message has been sent"
+  },
+  "pdf": {
+    "mobile": "Your device cannot display PDF files, please click here to download"
   }
 }

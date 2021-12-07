@@ -2,15 +2,15 @@ import { useEffect, useState } from "react";
 import { RiMenu5Fill, RiCloseFill } from "react-icons/ri";
 import { useTranslation } from "react-i18next";
 
-import ToggleLng from "../toggle/ToggleLng";
-
 import classes from "./Header.module.scss";
-import ToggleTheme from "../toggle/ToggleTheme";
 import Toggles from "../toggle/Toggles";
+import { NavLink, Outlet } from "react-router-dom";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+
   const [size, setSize] = useState({ width: undefined, height: undefined });
+
   const [t, i18n] = useTranslation("global");
 
   useEffect(() => {
@@ -50,7 +50,16 @@ const Header = () => {
         >
           <ul>
             <li>
-              <a href="#about" onClick={handleMenu} className="h-about">
+              <a
+                href="#about"
+                onClick={handleMenu}
+                className="h-about"
+                // style={({ isActive }) => {
+                //   return {
+                //     color: isActive ? "#ffe652" : "#f3f2f2",
+                //   };
+                // }}
+              >
                 {t("header.h-about")}
               </a>
             </li>
@@ -67,6 +76,7 @@ const Header = () => {
           </ul>
           <Toggles />
         </nav>
+        <Outlet />
         <div className={classes.header__content__menu}>
           {!menuOpen ? (
             <RiMenu5Fill onClick={handleMenu} />

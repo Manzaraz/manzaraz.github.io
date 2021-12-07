@@ -1,11 +1,11 @@
 @import "./../../styles/variables.scss";
 
 .header {
-  background: linear-gradient($primary 75%, rgba($p-light1, 0.9));
+  background: linear-gradient(to top, $p-dark, $primary, $p-light1, $p-light2);
   width: 100%;
-  // height: $headerHeight;
-  // padding: 0 1.5rem;
-  // position: -webkit-sticky;
+  height: $headerHeight;
+  padding: 0 1.5rem;
+  position: -webkit-sticky;
   z-index: 999;
   position: sticky;
   top: 0;
@@ -24,12 +24,14 @@
     position: sticky;
     z-index: 100;
     &__logo {
-      font-size: 2rem;
-      font-weight: bold;
-      color: $light;
-      transition: all 0.5s ease-in-out;
+      @include textShadow;
+      font: bold 2rem $Poppins;
+      background-color: rgba($dark, 0.5);
+      color: transparent;
+      background-clip: text;
+      transition: all 0.3s ease-in-out;
       &:hover {
-        color: $s-light;
+        color: rgba($secondary, 0.7);
       }
     }
     &__nav {
@@ -84,7 +86,7 @@
             border-radius: $borderRadius;
             transition: 0.3s all ease-in-out;
             &:hover {
-              background: rgba($light, 0.1);
+              background: rgba($p-dark, 0.5);
             }
             &:active {
               border-radius: calc(#{$borderRadius} + 6px);

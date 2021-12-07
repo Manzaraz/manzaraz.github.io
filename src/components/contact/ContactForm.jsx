@@ -3,6 +3,7 @@ import Loader from "../loader/Loader";
 import Message from "../message/Message";
 import { useContext } from "react";
 import { ThemeContext } from "../../helpers/context";
+import { useTranslation } from "react-i18next";
 
 const initialForm = {
   name: "",
@@ -15,25 +16,25 @@ const validationsForm = (form) => {
   let errors = {};
   let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚÜúü\s]+$/;
   let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
-  let regexComents = /^.{1,255}$/;
+  let regexComents = /^.{1,280}$/;
 
   if (!form.name.trim()) {
-    errors.name = 'Field "Name" is required!.';
+    errors.name = "c-err-name1";
   } else if (!regexName.test(form.name.trim())) {
-    errors.name = 'the "name" field only accepts letters and blanks';
+    errors.name = "c-err-name2";
   }
   if (!form.email.trim()) {
-    errors.email = 'Field "Email" is required!.';
+    errors.email = "c-err-email1";
   } else if (!regexEmail.test(form.email.trim())) {
-    errors.email = 'the "emal" field must be a valid email';
+    errors.email = "c-err-email2";
   }
   if (!form.subject.trim()) {
-    errors.subject = 'Field "Subject" is required!.';
+    errors.subject = "c-err-subject";
   }
   if (!form.comments.trim()) {
-    errors.comments = 'Field "Message" is required!.';
+    errors.comments = "c-err-message1";
   } else if (!regexComents.test(form.comments.trim())) {
-    errors.comments = "message field must contain between 1 and 255 characters";
+    errors.comments = "c-err-message2";
   }
 
   return errors;
@@ -48,8 +49,8 @@ let styles = {
 };
 
 const ContactForm = () => {
-  const theme = useContext(ThemeContext);
-  const darkMode = theme.state.darkMode;
+  const [t, i18n] = useTranslation("global");
+  const [{ isDark }] = useContext(ThemeContext);
 
   const {
     form,
@@ -65,70 +66,72 @@ const ContactForm = () => {
     <>
       <form onSubmit={handleSubmit}>
         <input
-          autocomplete="off"
+          autoComplete="off"
           type="text"
           name="name"
-          placeholder="Your name..."
+          placeholder={t("contact.c-name")}
           onBlur={handleBlur}
           onChange={handleChange}
           value={form.name}
           required
           style={{
-            backgroundColor: darkMode ? "#27252750" : "#f5ede350",
-            color: darkMode && "#F5EDE3",
+            backgroundColor: isDark ? "#27252750" : "#f5ede350",
+            color: isDark && "#F5EDE3",
           }}
         />
-        {errors.name && <p style={styles}>{errors.name}</p>}
+        {errors.name && <p style={styles}>{t(`contact.${errors.name}`)}</p>}
         <input
           autoComplete="off"
           type="email"
           name="email"
-          placeholder="Email..."
+          placeholder={t("contact.c-email")}
           onBlur={handleBlur}
           onChange={handleChange}
           value={form.email}
           required
           style={{
-            backgroundColor: darkMode ? "#27252750" : "#f5ede350",
-            color: darkMode && "#F5EDE3",
+            backgroundColor: isDark ? "#27252750" : "#f5ede350",
+            color: isDark && "#F5EDE3",
           }}
         />
-        {errors.email && <p style={styles}>{errors.email}</p>}
+        {errors.email && <p style={styles}>{t(`contact.${errors.email}`)}</p>}
         <input
           autoComplete="off"
           type="text"
           name="subject"
-          placeholder="Subject..."
+          placeholder={t("contact.c-subject")}
           onBlur={handleBlur}
           onChange={handleChange}
           value={form.subject}
           required
           style={{
-            backgroundColor: darkMode ? "#27252750" : "#f5ede350",
-            color: darkMode && "#F5EDE3",
+            backgroundColor: isDark ? "#27252750" : "#f5ede350",
+            color: isDark && "#F5EDE3",
           }}
         />
-        {errors.subject && <p style={styles}>{errors.subject}</p>}
+        {errors.subject && (
+          <p style={styles}>{t(`contact.${errors.subject}`)}</p>
+        )}
         <textarea
           name="comments"
           rows="5"
-          placeholder="Your Message..."
+          placeholder={t("contact.c-message")}
           onBlur={handleBlur}
           onChange={handleChange}
           value={form.comments}
           required
           style={{
-            backgroundColor: darkMode ? "#27252750" : "#f5ede350",
-            color: darkMode && "#F5EDE3",
+            backgroundColor: isDark ? "#27252750" : "#f5ede350",
+            color: isDark && "#F5EDE3",
           }}
         ></textarea>
-        {errors.comments && <p style={styles}>{errors.comments}</p>}
-        <input type="submit" value="Submit" />
+        {errors.comments && (
+          <p style={styles}>{t(`contact.${errors.comments}`)}</p>
+        )}
+        <input type="submit" value={t("contact.c-submit")} />
       </form>
       {loading && <Loader />}
-      {response && (
-        <Message msg="The message has been sent" bgColor="#198754" />
-      )}
+      {response && <Message msg={t("contact.c-success")} bgColor="#198754" />}
     </>
   );
 };

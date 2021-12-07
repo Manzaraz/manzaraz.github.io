@@ -1,46 +1,49 @@
 @import "./../../styles/variables.scss";
 
 .tech {
-  width: 122.5px;
   height: 160px;
+  width: 122.5px;
   display: flex;
   flex-direction: column;
   position: relative;
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
-  background: $primary;
+  // background: $primary;
+  background: linear-gradient(to top, $p-dark, $primary, $p-light1);
   box-shadow: $boxShadow;
   border-radius: $borderRadius;
 
   &__wrapper {
     height: 100%;
-    animation: move 25s ease-in-out infinite alternate;
+    animation: move 20s ease-in-out infinite alternate;
   }
   @keyframes move {
     0% {
       transform: translateY(-5px);
     }
     100% {
-      transform: translateY(-910px);
+      transform: translateY(-850px);
     }
   }
   &__fig {
-    position: static;
-    height: 50px;
-    width: 50px;
     flex: 1;
-    padding: 5px;
-    margin: 20px;
+    height: 65px;
+    width: 100%;
+    padding: 15px 0;
+    margin: 20px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     &__img {
       height: 42px;
       width: auto;
     }
+
     &__fc {
+      @include textShadow;
       font-size: 14px;
       font-weight: 400;
       text-align: center;

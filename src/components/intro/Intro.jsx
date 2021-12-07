@@ -1,14 +1,19 @@
 import { useTranslation } from "react-i18next";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { gsap } from "gsap";
 
 import classes from "./Intro.module.scss";
 import avatar from "../../img/me1.png";
+import { ThemeContext } from "../../helpers/context";
 
 const Intro = () => {
-  // eslint-disable-next-line
+  // DarkTheme
+  const [{ isDark }] = useContext(ThemeContext);
+
+  // Translation
   const [t, i18n] = useTranslation("global");
 
+  // Animation
   const timeline = gsap.timeline({ defaults: { opacity: 0 } });
 
   useEffect(() => {
@@ -23,7 +28,7 @@ const Intro = () => {
     timeline
       .from(iGreetings, {
         opacity: 0,
-        y: -200,
+        y: -100,
         duration: 1.5,
         stagger: 0.3,
       })
@@ -49,13 +54,35 @@ const Intro = () => {
               Christian Manzaraz
             </div>
             <div className={`${classes.i__title} i-title`}>
-              <div className={classes.i__title__wrapper}>
-                <div className={classes.i__title__item}>
+              <ul className={classes.i__title__wrapper}>
+                <li
+                  className={classes.i__title__item}
+                  style={{
+                    color: isDark ? "#ffe652" : "#009dae",
+                    transition: "all 1.2s ease-in-out",
+                  }}
+                >
+                  Backend
+                </li>
+                <li
+                  className={classes.i__title__item}
+                  style={{
+                    color: isDark ? "#ffe652" : "#009dae",
+                    transition: "all 1.2s ease-in-out",
+                  }}
+                >
                   JavaScript Full-Stack Developer
-                </div>
-                <div className={classes.i__title__item}>Frontend</div>
-                <div className={classes.i__title__item}>Backend</div>
-              </div>
+                </li>
+                <li
+                  className={classes.i__title__item}
+                  style={{
+                    color: isDark ? "#ffe652" : "#009dae",
+                    transition: "all 1.2s ease-in-out",
+                  }}
+                >
+                  Frontend
+                </li>
+              </ul>
             </div>
           </h1>
           <h2 className={`${classes.i__desc} i-desc`}>{t("intro.i-desc")}</h2>
@@ -63,7 +90,9 @@ const Intro = () => {
         <div className={classes.i__mouse}></div>
       </div>
       <div className={classes.i__right}>
-        <div className={`${classes.i__bg} i-bg`}></div>
+        <div className={`${classes.i__bg} i-bg`}>
+          <div className={`${classes.i__bgIn} i-bg`}></div>
+        </div>
         <img
           src={avatar}
           alt="Christian Manzaraz"
