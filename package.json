@@ -1,5 +1,10 @@
 {
   "name": "manzi-portfolio",
+  "author": {
+    "name": "Christian Manzaraz",
+    "email": "manzaraz@hotmail.com",
+    "url": "https://manzaraz.github.io"
+  },
   "homepage": "https://manzaraz.github.io",
   "version": "0.1.0",
   "private": true,
