@@ -1,5 +1,6 @@
 {
   "name": "manzi-portfolio",
+  "homepage": "https://manzaraz.github.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
