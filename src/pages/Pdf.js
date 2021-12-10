@@ -2,7 +2,7 @@
 import React from "react";
 
 import DeviceDetect from "../helpers/deviceDetect";
-import cv from "../docs/cvManzi.pdf";
+import cv from "./../img/cvManzi.pdf";
 
 export default class PDFViewer extends React.Component {
   componentDidMount() {
