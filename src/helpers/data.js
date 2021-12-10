@@ -1,3 +1,18 @@
+// export const MenuLinks = [
+//   {
+//     title: `${t("header.h-about")}`,
+//     url: "#about",
+//   },
+//   {
+//     title: `${t("header.h-portfolio")}`,
+//     url: "#portfolio",
+//   },
+//   {
+//     title: `${t("header.h-contact")}`,
+//     url: "/pricing",
+//   },
+// ];
+
 export const products = [
   {
     id: 1,

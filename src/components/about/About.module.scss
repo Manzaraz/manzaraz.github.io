@@ -83,6 +83,7 @@
     }
     &__desc {
       @include longText;
+      text-align: justify;
     }
   }
   @mixin figcaption {

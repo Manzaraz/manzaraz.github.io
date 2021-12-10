@@ -1,41 +1,41 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { RiMenu5Fill, RiCloseFill } from "react-icons/ri";
 import { useTranslation } from "react-i18next";
 
 import classes from "./Header.module.scss";
 import Toggles from "../toggle/Toggles";
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 const Header = () => {
+  const [t] = useTranslation("global");
+
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const [size, setSize] = useState({ width: undefined, height: undefined });
-
-  const [t, i18n] = useTranslation("global");
+  const [size, setSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
 
   useEffect(() => {
-    const handleResize = () => {
+    const handlerSize = () => {
       setSize({
         width: window.innerWidth,
         height: window.innerHeight,
       });
     };
-    window.addEventListener("resize", handleResize);
-
+    window.addEventListener("resize", handlerSize);
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", handlerSize);
     };
   }, []);
 
   useEffect(() => {
-    if (size.width > 768 && menuOpen) {
+    if (size.with > 768 && menuOpen) {
       setMenuOpen(false);
     }
-  }, [size.width, size.height]);
+  }, [size.width, menuOpen]);
 
-  const handleMenu = (e) => {
-    setMenuOpen((e) => !e);
-  };
+  const handlerMenu = () => window.innerWidth < 768 && setMenuOpen((p) => !p);
 
   return (
     <header className={classes.header}>
@@ -45,48 +45,46 @@ const Header = () => {
         </h2>
         <nav
           className={`${classes.header__content__nav} ${
-            menuOpen && size.width < 760 ? classes.isMenu : ""
+            menuOpen ? classes.isMenu : ""
           }`}
         >
           <ul>
             <li>
-              <a
-                href="#about"
-                onClick={handleMenu}
-                className="h-about"
-                // style={({ isActive }) => {
-                //   return {
-                //     color: isActive ? "#ffe652" : "#f3f2f2",
-                //   };
-                // }}
-              >
+              <a href="#about" onClick={handlerMenu} className="h-about">
                 {t("header.h-about")}
               </a>
             </li>
             <li>
-              <a href="#portfolio" onClick={handleMenu} className="h-portfolio">
+              <a
+                href="#portfolio"
+                onClick={handlerMenu}
+                className="h-portfolio"
+              >
                 {t("header.h-portfolio")}
               </a>
             </li>
             <li>
-              <a href="#contact" onClick={handleMenu} className="h-contact">
+              <a href="#contact" onClick={handlerMenu} className="h-contact">
                 {t("header.h-contact")}
               </a>
             </li>
           </ul>
-          <Toggles />
+          <Toggles handlerMenu={handlerMenu} />
         </nav>
-        <Outlet />
         <div className={classes.header__content__menu}>
           {!menuOpen ? (
-            <RiMenu5Fill onClick={handleMenu} />
+            <RiMenu5Fill
+              onClick={handlerMenu}
+              className={classes.header__open}
+            />
           ) : (
             <RiCloseFill
-              onClick={handleMenu}
+              onClick={handlerMenu}
               className={classes.header__close}
             />
           )}
         </div>
+        <Outlet />
       </div>
     </header>
   );

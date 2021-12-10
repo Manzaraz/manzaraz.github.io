@@ -68,10 +68,10 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-
-    // right title
+    @include breakpoint(md) {
+      flex: 4;
+    }
     &__sub {
-      // flex: 1;
       display: none;
       @include breakpoint(md) {
         padding: 20px;

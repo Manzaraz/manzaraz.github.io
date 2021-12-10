@@ -11,7 +11,7 @@ const Intro = () => {
   const [{ isDark }] = useContext(ThemeContext);
 
   // Translation
-  const [t, i18n] = useTranslation("global");
+  const [t] = useTranslation("global");
 
   // Animation
   const timeline = gsap.timeline({ defaults: { opacity: 0 } });

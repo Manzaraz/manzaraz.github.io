@@ -1,9 +1,17 @@
 import DeviceDetect from "../../helpers/deviceDetect";
 import classes from "./Card.module.scss";
-import coddingImg0 from "../../img/programming1.jpg";
+
+import meLight from "../../img/meLight.jpeg";
+import meDark from "../../img/meDark.jpeg";
+import { ThemeContext } from "../../helpers/context";
+import { useContext } from "react";
+
 const coddingVideo = "https://manzaraz.github.io/DOM/assets/%20Manzi.mp4";
 
 const Card = () => {
+  // theme darkLight
+  const [{ isDark }] = useContext(ThemeContext);
+
   return (
     <div className={classes.card}>
       <div className={classes.card__top}>
@@ -11,9 +19,10 @@ const Card = () => {
         <figure className={classes.card__imgCnt}>
           {DeviceDetect() === "Mobile" ? (
             <img
-              src={coddingImg0}
-              alt="Me programming"
+              src={isDark ? meDark : meLight}
+              alt="Christian programming"
               className={classes.card__img}
+              style={{ transition: "all .5s ease-in-out" }}
             />
           ) : (
             <video

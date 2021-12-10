@@ -13,6 +13,19 @@
     padding: 0 10px;
   }
   transition: all 0.3s ease-in-out;
+
+  @mixin logo {
+    @include textShadow;
+    font: bold 2rem $Poppins;
+    background-color: rgba($dark, 0.5);
+    color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      color: $secondary;
+    }
+  }
+
   &__content {
     overflow: hidden;
     color: $light;
@@ -23,16 +36,9 @@
     align-items: center;
     position: sticky;
     z-index: 100;
+
     &__logo {
-      @include textShadow;
-      font: bold 2rem $Poppins;
-      background-color: rgba($dark, 0.5);
-      color: transparent;
-      background-clip: text;
-      transition: all 0.3s ease-in-out;
-      &:hover {
-        color: rgba($secondary, 0.7);
-      }
+      @include logo;
     }
     &__nav {
       top: 0;

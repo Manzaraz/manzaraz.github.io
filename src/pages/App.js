@@ -18,7 +18,7 @@ const App = () => {
       style={{
         backgroundColor: theme.backgroundColor,
         color: theme.color,
-        transition: "all 1.2s ease-in-out",
+        transition: "all .5s ease-in-out",
       }}
     >
       <Intro />

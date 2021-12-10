@@ -49,7 +49,7 @@ let styles = {
 };
 
 const ContactForm = () => {
-  const [t, i18n] = useTranslation("global");
+  const [t] = useTranslation("global");
   const [{ isDark }] = useContext(ThemeContext);
 
   const {

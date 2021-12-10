@@ -8,12 +8,11 @@ import DeviceDetect from "../../helpers/deviceDetect";
 import { Link } from "react-router-dom";
 
 const About = () => {
+  // translation
   // eslint-disable-next-line
-  const [t, i18n] = useTranslation("global");
+  const [t] = useTranslation("global");
 
   let description = t("about.a-desc");
-
-  const handleClick = (e) => {};
 
   return (
     <section className={classes.a} id="about">
@@ -27,7 +26,7 @@ const About = () => {
           <div className={classes.a__left__card}>
             <Card />
           </div>
-          <Link to="/pdf" className={classes.a__left__btnCv}>
+          <Link to="/pdf" className={classes.a__left__btnCv} target="_blank">
             {t("about.a-btn")}
           </Link>
         </div>
@@ -41,7 +40,7 @@ const About = () => {
             className={`${classes.a__right__desc} .a-desc`}
           >
             {DeviceDetect() === "Mobile"
-              ? description.slice(0, 255).concat(t("about.a-more"))
+              ? description.slice(0, 140).concat(t("about.a-more"))
               : description}
           </p>
           <figure className={classes.a__know}>
