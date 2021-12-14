@@ -12,7 +12,6 @@ import "./styles/index.scss";
 import { ThemeProvider } from "./helpers/context";
 
 import App from "./pages/App";
-import Pdf from "./pages/Pdf";
 
 i18next.use(LanguageDetector).init({
   interpolation: {
@@ -37,7 +36,6 @@ ReactDOM.render(
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<App />} />
-            <Route path="/pdf" element={<Pdf />} />
             <Route
               path="*"
               element={

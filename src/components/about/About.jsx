@@ -1,11 +1,13 @@
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 import Card from "./Card";
 import classes from "./About.module.scss";
 import Technoligies from "./Technoligies";
 import Maps from "./Maps";
 import DeviceDetect from "../../helpers/deviceDetect";
-import { Link } from "react-router-dom";
+import cv from "../../docs/cvManzi.pdf";
+import DownloadBtn from "./DownloadBtn";
 
 const About = () => {
   // translation
@@ -26,9 +28,10 @@ const About = () => {
           <div className={classes.a__left__card}>
             <Card />
           </div>
-          <Link to="/pdf" className={classes.a__left__btnCv} target="_blank">
+          <DownloadBtn name={t("about.a-btn")} />
+          {/* <Link to="/pdf" className={classes.a__left__btnCv} target="_blank">
             {t("about.a-btn")}
-          </Link>
+          </Link> */}
         </div>
 
         <div className={classes.a__right}>
