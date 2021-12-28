@@ -41,10 +41,8 @@
       font-size: 1.25rem;
       display: flex;
       flex-direction: column;
-      // justify-content: center;
       align-items: center;
       text-align: center;
-      backdrop-filter: blur(2px);
       transform: translate(0);
       transition: 0.3s ease-in-out transform;
       height: 100%;
@@ -54,18 +52,15 @@
         flex-direction: row;
         background: transparent;
         width: auto;
-        // position: static;
       }
       ul {
-        padding: 0;
         display: flex;
-        margin-bottom: $spacing-lg;
         flex-direction: row;
 
         li {
           a {
             color: inherit;
-            padding: 1rem;
+            padding: 0 10px;
             border-radius: $borderRadius;
             transition: 0.3s all ease-in-out;
             &:hover {
