@@ -8,6 +8,7 @@ import Intro from "../components/intro/Intro";
 import ProductList from "../components/productList/ProductList";
 
 import { ThemeContext } from "../helpers/context";
+import Footer from "../components/footer/Footer";
 
 const App = () => {
   const [{ theme }] = useContext(ThemeContext);
@@ -26,6 +27,7 @@ const App = () => {
       <About />
       <ProductList />
       <Contact />
+      <Footer />
       {/*
        */}
     </section>
