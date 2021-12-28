@@ -1,7 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Outlet } from "react-router-dom";
 import classes from "./Footer.module.scss";
-import { AiFillInstagram, AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import {
+  AiFillInstagram,
+  AiFillGithub,
+  AiFillLinkedin,
+  AiOutlineWhatsApp,
+} from "react-icons/ai";
 
 const Footer = () => {
   return (
@@ -38,6 +43,16 @@ const Footer = () => {
                 rel="noreferrer"
               >
                 <AiFillInstagram />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://wa.me/5493815091639"
+                className="h-about"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <AiOutlineWhatsApp />
               </a>
             </li>
           </ul>

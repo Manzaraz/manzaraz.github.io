@@ -68,8 +68,6 @@
               color: $secondary;
             }
             &:active {
-              // border-radius: calc(#{$borderRadius} + 2px);
-              // border-radius: $borderRadius;
               background: linear-gradient(rgba($light, 0.1), rgba($light, 0.2));
             }
           }
