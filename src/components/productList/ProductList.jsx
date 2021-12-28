@@ -1,5 +1,6 @@
 import Product from "../product/Product";
 import classes from "./ProductList.module.scss";
+import { BsGithub } from "react-icons/bs";
 import { products } from "../../helpers/data";
 import { useTranslation } from "react-i18next";
 import DeviceDetect from "../../helpers/deviceDetect";
@@ -22,12 +23,22 @@ const ProductList = () => {
       </div>
       <div className={classes.pl__list}>
         {elements.map((el) => (
-          <Product
-            key={el.id}
-            img={el.img}
-            link={el.link}
-            className={classes.pl__product}
-          />
+          <div className={classes.pl__p}>
+            <Product
+              key={el.id}
+              img={el.img}
+              link={el.link}
+              className={classes.pl__p__product}
+            />
+            <a
+              href={el.repo}
+              className={classes.pl__p__btn}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <BsGithub />
+            </a>
+          </div>
         ))}
       </div>
     </div>

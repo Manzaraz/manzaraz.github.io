@@ -130,7 +130,7 @@ const ContactForm = () => {
         )}
         <input type="submit" value={t("contact.c-submit")} />
       </form>
-      {loading && <Loader />}
+      {loading && <Loader style={{ textAlign: "Center" }} />}
       {response && <Message msg={t("contact.c-success")} bgColor="#198754" />}
     </>
   );

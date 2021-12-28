@@ -1,6 +1,6 @@
 import classes from "./Product.module.scss";
 
-const Product = ({ img, link }) => {
+const Product = ({ img, link, repo }) => {
   return (
     <section className={classes.p} id="portfolio">
       <div className={classes.p__browser}>
