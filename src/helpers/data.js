@@ -1,28 +1,28 @@
 export const products = [
   {
     id: 1,
+    img: "https://i.ibb.co/tKFNJWX/crypto-screencapture.png",
+    link: "https://cripto-app.netlify.app",
+    repo: "https://github.com/Manzaraz/crypto-app.git",
+  },
+  {
+    id: 2,
     img: "https://i.ibb.co/j3ZYjdH/screencapture-manziflix.png",
     link: "https://manziflix.netlify.app/",
     repo: "https://github.com/Manzaraz/manziflix.git",
   },
   {
-    id: 2,
+    id: 3,
     img: "https://i.ibb.co/GP1zhtt/elementos-DOMejercicios.png",
     link: "https://manzaraz.github.io/DOM/",
     repo: "https://github.com/Manzaraz/DOM.git",
   },
   {
-    id: 3,
+    id: 4,
     img: "https://i.ibb.co/v3nVyt7/FEMentor.png",
     link: "https://www.frontendmentor.io/solutions/mobile-first-html-css-bootstrap5-sass-_NV-UY3gw",
     repo: "https://github.com/Manzaraz/FE-Challenge.git",
   },
-  // {
-  //   id: 4,
-  //   img: "https://i.ibb.co/v3nVyt7/FEMentor.png",
-  //   link: "https://www.frontendmentor.io/solutions/mobile-first-html-css-bootstrap5-sass-_NV-UY3gw",
-  //   repo: "",
-  // },
 ];
 
 export const techs = [
