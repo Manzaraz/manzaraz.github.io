@@ -32,10 +32,10 @@
   }
   &__img {
     width: 100%;
-    transition: all 10s ease-in-out;
+    transition: all 7.5s ease-in-out;
     overflow: hidden;
     &:hover /*.p-img */ {
-      transform: translateY(-100%);
+      transform: translateY(-50%);
     }
   }
 }
