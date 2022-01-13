@@ -16,6 +16,8 @@ export const useForm = (initialForm, validateForm) => {
     });
   };
 
+  const formUrl = process.env.REACT_APP_FORM_URL;
+
   const handleBlur = (e) => {
     handleChange(e);
     setErrors(validateForm(form));
@@ -30,7 +32,7 @@ export const useForm = (initialForm, validateForm) => {
       setLoading(true);
 
       helpHttp()
-        .post("https://formsubmit.co/ajax/manzaraz@hotmail.com", {
+        .post(formUrl, {
           body: form,
           headers: {
             "Content-Type": "application/json",
