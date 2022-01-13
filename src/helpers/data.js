@@ -1,5 +1,11 @@
 export const products = [
   {
+    id: 0,
+    img: "https://i.ibb.co/xJhkmBT/api-manzi-amazon-data-scraper1-2022-01-13-15-47-54.png",
+    link: "https://rapidapi.com/Manzaraz/api/manzi-amazon-data-scraper1/",
+    repo: "https://github.com/Manzaraz/scraper-api.git",
+  },
+  {
     id: 1,
     img: "https://i.ibb.co/tKFNJWX/crypto-screencapture.png",
     link: "https://cripto-app.netlify.app",
