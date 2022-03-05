@@ -1,7 +1,6 @@
 import Product from "../product/Product";
 import classes from "./ProductList.module.scss";
 import { BsGithub } from "react-icons/bs";
-import { MdWeb } from "react-icons/md";
 import { products } from "../../helpers/data";
 import { useTranslation } from "react-i18next";
 import DeviceDetect from "../../helpers/deviceDetect";

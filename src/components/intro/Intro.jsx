@@ -42,7 +42,7 @@ const Intro = () => {
         { duration: 1, rotation: 360, y: 100, stagger: 0.5 },
         "=-3"
       );
-  }, []);
+  }, [timeline]);
 
   return (
     <section className={classes.i}>

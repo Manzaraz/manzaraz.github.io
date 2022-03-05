@@ -1,12 +1,11 @@
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 
 import Card from "./Card";
 import classes from "./About.module.scss";
 import Technoligies from "./Technoligies";
 import Maps from "./Maps";
 import DeviceDetect from "../../helpers/deviceDetect";
-import cv from "../../docs/cvManzi.pdf";
+
 import DownloadBtn from "./DownloadBtn";
 
 const About = () => {
