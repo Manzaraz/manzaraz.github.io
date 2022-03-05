@@ -49,13 +49,30 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    &__btn {
+  }
+  &__figcaption {
+    width: 115px;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+
+    &__site {
       @include btn;
-      height: 50px;
-      width: 95%;
-      padding: 10px;
-      border-radius: $borderRadius;
-      font-size: 1.75rem;
+      border-radius: 25px 0 0 25px;
+      width: 200px;
+      height: 25px;
+      padding: 5px 10px;
+    }
+
+    &__repo {
+      @include btn;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0 25px 25px 0;
+      width: 200px;
+      height: 25px;
+      padding: 5px 10px;
     }
   }
 }

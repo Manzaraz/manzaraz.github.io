@@ -2,7 +2,7 @@ import React from "react";
 
 import classes from "./About.module.scss";
 
-import cv from "../../docs/cvV3.pdf";
+import cv from "../../docs/cvManzi.pdf";
 
 export default class DownloadBtn extends React.Component {
   //   componentDidMount() {
